@@ -57,8 +57,9 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-scale">
             <a
-              href="/Resume_MERN.pdf"
+              href="/MERN_RESUME.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
             >
               <span>Download Resume</span>
