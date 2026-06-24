@@ -6,7 +6,6 @@ const Projects = () => {
     {
       id: 1,
       title: "Shoppe-Ecommerce",
-
       description:
         "A modern full-stack eCommerce platform with secure authentication, Razorpay payments, product management, order tracking, and an intuitive admin dashboard. Built for scalability, performance, and a seamless shopping experience.",
       tech: ["React.js", "Express.js", "MongoDB", "Node.js"],
@@ -40,7 +39,7 @@ const Projects = () => {
         "https://res.cloudinary.com/dpvashxyn/image/upload/v1782332758/Screenshot_2026-06-25_015154_t7pxcr.png",
         "https://res.cloudinary.com/dpvashxyn/image/upload/v1782332792/Screenshot_2026-06-25_015258_mwzmj7.png",
       ],
-      liveUrl: "#",
+      liveUrl: "https://live-tv-sand.vercel.app/",
     },
   ];
 
@@ -236,6 +235,8 @@ const Projects = () => {
 
                 <a
                   href={currentProject.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   className="inline-block w-full md:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-xl transition-all hover:-translate-y-1"
                 >

@@ -9,8 +9,9 @@ const Navbar = () => {
     const subject = "Let's Talk - Portfolio Inquiry";
     const body = `Hi Shresht,\n\nI would like to connect with you regarding your Work.`;
 
-    // Template literal ke andar URL encode karein
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
   };
@@ -47,36 +48,64 @@ const Navbar = () => {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-2xl text-white/45 focus:outline-none"
+          className="md:hidden text-2xl text-white/45 focus:outline-none transition-transform duration-300"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? "✕" : "☰"}
+          {/* Icon me bhi slight rotation effect add kar sakte hain */}
+          <div
+            className={`transform transition-transform duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}
+          >
+            {isOpen ? "✕" : "☰"}
+          </div>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 space-y-4 text-center text-sm font-medium text-gray-700">
-          <a href="#home" className="block hover:text-purple-600">
+      {/* Mobile Menu with Smooth Transition */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 space-y-4 text-center text-sm font-medium text-gray-700">
+          <a
+            href="#home"
+            className="block hover:text-purple-600 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </a>
-          <a href="#skills" className="block hover:text-purple-600">
+          <a
+            href="#skills"
+            className="block hover:text-purple-600 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
             Skills
           </a>
-          <a href="#projects" className="block hover:text-purple-600">
+          <a
+            href="#projects"
+            className="block hover:text-purple-600 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
             Projects
           </a>
-          <a href="#contact" className="block hover:text-purple-600">
+          <a
+            href="#contact"
+            className="block hover:text-purple-600 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </a>
           <button
-            onClick={handleLetsTalk}
-            className="w-full py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold"
+            onClick={() => {
+              handleLetsTalk();
+              setIsOpen(false);
+            }}
+            className="w-full py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-md active:scale-95 transition-all"
           >
             Let's Talk
           </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
