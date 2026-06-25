@@ -13,13 +13,18 @@ const Hero = () => {
         <div className="order-1 lg:order-2 relative animate-fade-scale">
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
 
-          <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-pulse-glow shadow-[0_0_60px_rgba(59,130,246,0.5)] hover:shadow-[0_0_80px_rgba(139,92,246,0.7)] transition-shadow duration-700 ease-in-out">
-            <div className="bg-slate-900 rounded-full p-1.5">
-              <img
-                src={MyPhoto}
-                alt="Shresht Gajbhiye"
-                className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-slate-900 shadow-inner"
-              />
+          <div className="relative flex justify-center items-center">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 blur-2xl opacity-75 animate-pulse [animation-duration:4s]"></div>
+
+            {/* Aage wala Main Image Container */}
+            <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 shadow-lg">
+              <div className="bg-slate-900 rounded-full p-1.5">
+                <img
+                  src={MyPhoto}
+                  alt="Shresht Gajbhiye"
+                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-slate-900 shadow-inner"
+                />
+              </div>
             </div>
           </div>
         </div>

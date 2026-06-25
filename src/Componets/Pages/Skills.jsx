@@ -1,8 +1,8 @@
 // components/Skills.jsx
 import React from "react";
+import { motion } from "framer-motion";
 
 const Skills = () => {
-  // Skills data array
   const skillCategories = [
     {
       title: "Frontend Architecture",
@@ -86,10 +86,7 @@ const Skills = () => {
           name: "Vercel",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
         },
-        {
-          name: "Render",
-          logo: "https://cdn.simpleicons.org/render",
-        },
+        { name: "Render", logo: "https://cdn.simpleicons.org/render" },
       ],
     },
   ];
@@ -99,13 +96,12 @@ const Skills = () => {
       id="skills"
       className="py-24 relative overflow-hidden bg-slate-950"
     >
-      {/* Background Glowing Orbs */}
+      {/* Background Orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20 animate-fade-scale">
+        <div className="text-center mb-20">
           <h2 className="text-sm font-extrabold tracking-[0.2em] text-blue-400 uppercase mb-3 drop-shadow-md">
             Technical Arsenal
           </h2>
@@ -118,17 +114,20 @@ const Skills = () => {
           <div className="w-24 h-1.5 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
         </div>
 
-        {/* Skills Grid */}
+        {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
               key={index}
+              // Even index (0, 2) left se aayega (-70px), Odd index (1, 3) right se aayega (70px)
+              initial={{ opacity: 0, x: index % 2 === 0 ? -70 : 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] group overflow-hidden"
             >
-              {/* Subtle hover gradient inside card */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Category Title - Added justify-center */}
               <div className="flex items-center justify-center gap-4 mb-8 relative z-10 text-center">
                 <div className="w-12 h-12 flex shrink-0 items-center justify-center rounded-2xl bg-white/5 border border-white/10 shadow-inner text-2xl group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
@@ -138,7 +137,6 @@ const Skills = () => {
                 </h4>
               </div>
 
-              {/* Skill Pills - Added justify-center */}
               <div className="flex flex-wrap justify-center gap-4 relative z-10">
                 {category.skills.map((skill, skillIndex) => (
                   <div
@@ -166,7 +164,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
