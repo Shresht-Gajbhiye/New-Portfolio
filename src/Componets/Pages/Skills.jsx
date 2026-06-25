@@ -20,6 +20,7 @@ const Skills = () => {
           name: "Tailwind CSS",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
         },
+
         {
           name: "HTML5",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
@@ -127,7 +128,7 @@ const Skills = () => {
               whileHover={{ y: -8 }}
               // Yahan se 'transition-all duration-500 hover:-translate-y-2' hata diya hai
               // Sirf color aur shadow ke liye 'transition-colors transition-shadow' use kiya hai
-              className="relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-colors transition-shadow duration-500 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] group overflow-hidden"
+              className="relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-shadow duration-500 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] group overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
