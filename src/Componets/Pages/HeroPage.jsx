@@ -16,7 +16,6 @@ const Hero = () => {
           <div className="relative flex justify-center items-center">
             <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 blur-2xl opacity-75 animate-pulse [animation-duration:4s]"></div>
 
-            {/* Aage wala Main Image Container */}
             <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 shadow-lg">
               <div className="bg-slate-900 rounded-full p-1.5">
                 <img

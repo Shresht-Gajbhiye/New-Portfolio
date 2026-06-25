@@ -119,12 +119,15 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              // Even index (0, 2) left se aayega (-70px), Odd index (1, 3) right se aayega (70px)
               initial={{ opacity: 0, x: index % 2 === 0 ? -70 : 70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] group overflow-hidden"
+              // Framer motion se hover effect handle kar rahe hain (y: -8px is equal to -translate-y-2)
+              whileHover={{ y: -8 }}
+              // Yahan se 'transition-all duration-500 hover:-translate-y-2' hata diya hai
+              // Sirf color aur shadow ke liye 'transition-colors transition-shadow' use kiya hai
+              className="relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-colors transition-shadow duration-500 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] group overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
